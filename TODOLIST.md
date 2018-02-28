@@ -1,6 +1,6 @@
 ## TODO LIST
 
-[ ] probe
+[x] probe
 [ ] input / output
 [ ] syntax error handling
 [ ] plateau + semantic error handling
