@@ -3,6 +3,11 @@ class Plateau
     @upper_rightmost_position = upper_rightmost_position
   end
 
+  def valid_command?(probe, command)
+    return true unless command == :move_forward
+    within_boundaries?(probe.dup.send(command))
+  end
+
   def within_boundaries?(position)
     ranges.each_index.all? { |i| ranges[i].include?(position[i]) }
   end
