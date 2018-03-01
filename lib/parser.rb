@@ -27,13 +27,13 @@ module Parser
 
   def self.validate_syntax_for_commands(line)
     unless line[/^[lrm ]*$/i]
-      raise ArgumentError.new('invalid syntax for commands') 
+      raise(ArgumentError, 'invalid syntax for commands')
     end
   end
 
   def self.validate_syntax_for_position_with_optional_direction(line)
     unless line[/^\s*\d+\s\d+(?:\s+[ENWS])?\s*$/]
-      raise ArgumentError.new('invalid syntax for position w/ opt. direction')
+      raise(ArgumentError, 'invalid syntax for position w/ opt. direction')
     end
   end
 end

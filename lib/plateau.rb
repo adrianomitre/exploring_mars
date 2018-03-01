@@ -1,3 +1,5 @@
+# Plateau in Mars, does boundary verification.
+#
 class Plateau
   def initialize(upper_rightmost_position)
     @upper_rightmost_position = upper_rightmost_position
@@ -16,8 +18,8 @@ class Plateau
 
   def ranges
     [
-      0 .. @upper_rightmost_position[0],
-      0 .. @upper_rightmost_position[1]
+      0..@upper_rightmost_position[0],
+      0..@upper_rightmost_position[1]
     ]
   end
 end

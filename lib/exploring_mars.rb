@@ -21,11 +21,10 @@ ARGF.each_with_index do |line, index|
       begin
         commands = Parser.parse_commands(line)
         commands.each do |cmd|
-          if plateau.valid_command?(probe, cmd)
-            probe.send(cmd)
-          else
+          unless plateau.valid_command?(probe, cmd)
             raise "Invalid command #{cmd} on line #{index}. Skipping probe..."
           end
+          probe.send(cmd)
         end
         Reporter.report_current_position(probe)
       rescue RuntimeError => error
