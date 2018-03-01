@@ -2,7 +2,8 @@
 
 [x] probe
 [x] input / output
+[x] plateau
+[ ] within boundaries verification
 [ ] syntax error handling
-[ ] plateau + within boundaries verification
 [ ] extras
   [ ] collision/detection
