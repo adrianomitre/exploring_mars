@@ -35,6 +35,11 @@ class Probe
       ].map(&:round)
   end
 
+  def valid_command?(plateau, command)
+    return true unless command == :move_forward
+    plateau.within_boundaries?(dup.send(command))
+  end
+
   private
 
   def turn(degrees)

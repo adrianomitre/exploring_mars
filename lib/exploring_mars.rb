@@ -21,7 +21,7 @@ ARGF.each_with_index do |line, index|
       begin
         commands = Parser.parse_commands(line)
         commands.each do |cmd|
-          unless plateau.valid_command?(probe, cmd)
+          unless probe.valid_command?(plateau, cmd)
             raise "Invalid command #{cmd} on line #{index}. Skipping probe..."
           end
           probe.send(cmd)
