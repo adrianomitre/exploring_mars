@@ -16,8 +16,6 @@ ARGF.each_with_index do |line, index|
   else
     commands = Parser.parse_commands(line)
     commands.each { |cmd| probe.send(cmd) }
-    # p commands
     Reporter.report_current_position(probe)
-    # p probe
   end
 end
