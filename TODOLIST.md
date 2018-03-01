@@ -4,6 +4,6 @@
 [x] input / output
 [x] plateau
 [x] within boundaries verification
-[ ] syntax error handling
+[x] syntax validation
 [ ] extras
   [ ] collision/detection
