@@ -1,5 +1,4 @@
 require_relative 'test_helper'
-require 'minitest/autorun'
 
 class TestProbe < Minitest::Test
   def setup
