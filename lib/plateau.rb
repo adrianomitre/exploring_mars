@@ -1,6 +1,8 @@
 # Plateau in Mars, does boundary verification.
 #
 class Plateau
+  attr_reader :upper_rightmost_position
+
   def initialize(upper_rightmost_position)
     @upper_rightmost_position = upper_rightmost_position
   end
