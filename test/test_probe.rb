@@ -4,7 +4,7 @@ require 'minitest/autorun'
 class TestProbe < Minitest::Test
   def setup
     @initial_position = Vector[0, 0]
-    @initial_direction = Probe::NAME_TO_DIRECTION[:NORTH]
+    @initial_direction = Probe::ORIENTATION_NAME_TO_DIRECTION[:NORTH]
     @probe = Probe.new(
       position: @initial_position,
       direction: @initial_direction
@@ -42,6 +42,8 @@ class TestProbe < Minitest::Test
   private
 
   def ensure_headed_north
-    @probe.turn_left until @probe.direction == Probe::NAME_TO_DIRECTION[:NORTH]
+    until @probe.direction == Probe::ORIENTATION_NAME_TO_DIRECTION[:NORTH]
+      @probe.turn_left
+    end
   end
 end

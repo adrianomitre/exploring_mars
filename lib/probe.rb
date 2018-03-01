@@ -3,8 +3,8 @@ require 'matrix'
 # Mars probe, as per the enunciate. Can turn left, right and move forward.
 #
 class Probe
-  NAME_TO_DIRECTION = {
-    EAST: 0,
+  ORIENTATION_NAME_TO_DIRECTION = {
+    EAST: 0.0,
     NORTH: Math::PI / 2,
     WEST: Math::PI,
     SOUTH: Math::PI * 3 / 2
