@@ -1,6 +1,8 @@
 require_relative 'test_helper'
 
 class TestProbe < Minitest::Test
+  include TestHelpers
+
   def setup
     @initial_position = Vector[0, 0]
     @initial_direction = Probe::ORIENTATION_NAME_TO_DIRECTION[:NORTH]
@@ -8,6 +10,23 @@ class TestProbe < Minitest::Test
       position: @initial_position,
       direction: @initial_direction
     )
+  end
+
+  def test_valid_command
+    plateau = Plateau.new(rand_non_negative_position)
+    probe =
+      Probe.new(
+        plateau: plateau,
+        position: plateau.upper_rightmost_position,
+        direction: Probe::ORIENTATION_NAME_TO_DIRECTION[:NORTH]
+      )
+    assert !probe.valid_command?(:move_forward)
+    probe.turn_right
+    assert !probe.valid_command?(:move_forward)
+    probe.turn_right
+    assert probe.valid_command?(:move_forward)
+    probe.turn_right
+    assert probe.valid_command?(:move_forward)
   end
 
   def test_turn_left

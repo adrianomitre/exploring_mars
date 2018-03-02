@@ -14,9 +14,10 @@ class Probe
 
   # Direction unit: radians
   #
-  def initialize(position:, direction:)
+  def initialize(position:, direction:, plateau: nil)
     @position = position
     @direction = direction
+    @plateau = plateau
   end
 
   def turn_left
@@ -35,9 +36,9 @@ class Probe
       ].map(&:round)
   end
 
-  def valid_command?(plateau, command)
-    return true unless command == :move_forward
-    plateau.within_boundaries?(dup.send(command))
+  def valid_command?(command)
+    return true if command != :move_forward || @plateau.nil?
+    @plateau.within_boundaries?(dup.move_forward)
   end
 
   private

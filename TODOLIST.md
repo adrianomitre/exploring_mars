@@ -6,4 +6,4 @@
 [x] within boundaries verification
 [x] syntax validation
 [ ] extras
-  [ ] collision/detection
+  [ ] collision detection

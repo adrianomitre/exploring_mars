@@ -14,6 +14,7 @@ ARGF.each_with_index do |line, index|
     elsif index.odd?
       probe =
         Probe.new(
+          plateau: plateau,
           position: Parser.parse_position(line),
           direction: Parser.parse_direction(line)
         )
@@ -21,7 +22,7 @@ ARGF.each_with_index do |line, index|
       begin
         commands = Parser.parse_commands(line)
         commands.each do |cmd|
-          unless probe.valid_command?(plateau, cmd)
+          unless probe.valid_command?(cmd)
             raise "Invalid command #{cmd} on line #{index}. Skipping probe..."
           end
           probe.send(cmd)
