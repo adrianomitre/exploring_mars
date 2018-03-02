@@ -33,3 +33,20 @@ execution continues.
 # Initial Impression
 
 The problem suggests and interpreter of a subset of [Logo programming language](https://simple.wikipedia.org/wiki/Logo_(programming_language)).
+
+# Extra features
+
+Features not explicitly demanded in the enunciate.
+
+Implemented:
+* Boundary checks (a probe cannot move outside the plateau)
+* Syntax error handling
+
+Not implemented:
+* Collision detection
+
+I decided not to do collision detection, which would necessarily involve
+reading the whole input before outputing anything, as it was not an explicit
+requirement and I believe there is enough material already for an initial
+assessment. I would be more than happy to implement the feature during the pair
+programming session, though.
