@@ -1,0 +1,9 @@
+## TODO LIST
+
+[x] probe
+[x] input / output
+[/] extras
+  [x] plateau
+  [x] within boundaries verification
+  [x] syntax validation
+  [ ] collision detection
