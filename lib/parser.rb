@@ -29,11 +29,13 @@ module Parser
     unless line[/^[lrm ]*$/i]
       raise(ArgumentError, 'invalid syntax for commands')
     end
+    true
   end
 
   def self.validate_syntax_for_position_with_optional_direction(line)
     unless line[/^\s*\d+\s\d+(?:\s+[ENWS])?\s*$/]
       raise(ArgumentError, 'invalid syntax for position w/ opt. direction')
     end
+    true
   end
 end

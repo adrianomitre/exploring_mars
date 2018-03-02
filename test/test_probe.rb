@@ -20,13 +20,14 @@ class TestProbe < Minitest::Test
         position: plateau.upper_rightmost_position,
         direction: Probe::ORIENTATION_NAME_TO_DIRECTION[:NORTH]
       )
-    assert !probe.valid_command?(:move_forward)
-    probe.turn_right
-    assert !probe.valid_command?(:move_forward)
-    probe.turn_right
-    assert probe.valid_command?(:move_forward)
-    probe.turn_right
-    assert probe.valid_command?(:move_forward)
+    2.times do
+      assert !probe.valid_command?(:move_forward)
+      probe.turn_right
+    end
+    2.times do
+      assert probe.valid_command?(:move_forward)
+      probe.turn_right
+    end
   end
 
   def test_turn_left
