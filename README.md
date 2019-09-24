@@ -18,7 +18,7 @@ If input file name argument is not provided, input is read from stdin.
 
 To run tests:
 ```
-./lib/exploring_mars.rb [input]
+./test/test_suite.rb [input]
 ```
 
 Open `./coverage/index.html` for coverage info.
